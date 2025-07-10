@@ -39,7 +39,7 @@ app.post('/api/reviews', (req, res) => {
 // Eliminar reseña (requiere contraseña en query)
 app.delete('/api/reviews/:id', (req, res) => {
     const password = req.query.password;
-    if (password !== 'NoTocar123') {
+    if (password !== 'admin123') {
         return res.status(403).json({ ok: false, error: 'Contraseña incorrecta' });
     }
     const id = parseInt(req.params.id);
